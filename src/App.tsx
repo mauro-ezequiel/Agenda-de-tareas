@@ -45,17 +45,18 @@ function App() {
   return (
     <section>
       <div className="cotainer">
-        <div className="row">
+        <br />
+        <div className="row ">
           <div className="col-md-6 offset-md-3">
             <div className="card">
               <div className="card-body">
-                <h5 className="card-title text-center">Tarea </h5>
+                <h5 className="card-title text-center">Tareas </h5>
               </div>
               <div className="card-text p-3">
                 <form onSubmit={handleSubmit}>
                   <input
                     type="text"
-                    placeholder="escribir.."
+                    placeholder="Escribe una tarea..."
                     value={nuevaTarea}
                     className="form-control"
                     onChange={onChange}
@@ -72,6 +73,7 @@ function App() {
                   <div key={index} className="card tareas">
                     <div className="card-body">
                       <h5>{i.name}</h5>
+                      {/*fin de mapear*/}
 
                       <button
                         onClick={() => {
@@ -96,10 +98,10 @@ function App() {
                     </div>
                   </div>
                 ))}
-                {/*fin de mapear*/}
               </div>
             </div>
           </div>
+          b
         </div>
       </div>
     </section>
