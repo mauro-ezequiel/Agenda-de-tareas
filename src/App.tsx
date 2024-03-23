@@ -62,7 +62,14 @@ function App() {
                     onChange={onChange}
                   />
                   <br />
-                  <button type="button" className="btn btn-primary w-100">
+                  {/*btn para guardar tarea*/}
+                  <button
+                    type="button"
+                    className="btn btn-primary w-100"
+                    onClick={() => {
+                      addTask(nuevaTarea);
+                    }}
+                  >
                     Guardar
                   </button>
                 </form>
