@@ -10,6 +10,7 @@ function App() {
   const [nuevaTarea, setNuevaTarea] = useState<string>("");
   const [listTarea, setListTarea] = useState<Tarea[]>([]);
 
+  // funcion para que el boton genere una nueva tarea//
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNuevaTarea(e.target.value);
   };
@@ -27,7 +28,19 @@ function App() {
     const nuevaTarea: Tarea[] = [...listTarea, { name: tarea, done: false }];
     setListTarea(nuevaTarea);
   };
-  //.....
+  //btn tarea completada//
+  const onClick = (pos: number): void => {
+    const nuevaTarea: Tarea[] = [...listTarea];
+    nuevaTarea[pos].done = !nuevaTarea[pos].done;
+    setListTarea(nuevaTarea);
+  };
+
+  //btn eliminar tarea //
+  const eliminar = (pos: number): void => {
+    const nuevaTarea: Tarea[] = [...listTarea];
+    nuevaTarea.splice(pos, 1);
+    setListTarea(nuevaTarea);
+  };
 
   return (
     <section>
@@ -51,14 +64,35 @@ function App() {
                   <button type="button" className="btn btn-primary w-100">
                     Guardar
                   </button>
-                  <br/>
                 </form>
+                <br />
 
                 {/*de esta forma pademos visualizar las tareas en la pantalla */}
                 {listTarea.map((i: Tarea, index: number) => (
-                  <div key={index} className="card">
+                  <div key={index} className="card tareas">
                     <div className="card-body">
                       <h5>{i.name}</h5>
+
+                      <button
+                        onClick={() => {
+                          onClick(index);
+                        }}
+                        className={
+                          "btn" + (i.done == true)
+                            ? "btn btn-success"
+                            : "btn btn-secondary"
+                        }
+                      >
+                        {i.done == true ? "realizada" : "pendiente"}
+                      </button>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => {
+                          eliminar(index);
+                        }}
+                      >
+                        Eliminar
+                      </button>
                     </div>
                   </div>
                 ))}

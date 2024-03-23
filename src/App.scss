@@ -1,1 +1,22 @@
+.tareas {
+  margin-bottom: 0.5em;
+}
+#x {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  font-weight: bold;
+  border: 1px solid #ebe6e6;
+  background-color: #ff0000;
+  color: #737373;
+  font-size: 1em;
+  text-align: center;
+  cursor: pointer;
+}
 
+.btn-danger {
+  margin-left: 0.5em;
+}
