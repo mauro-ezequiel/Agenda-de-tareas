@@ -22,7 +22,7 @@ function App() {
     setNuevaTarea("");
   };
 
-  // se aguarda la tarea en "addTask"
+  // se guarda la tarea en "addTask"
 
   const addTask = (tarea: string): void => {
     const nuevaTarea: Tarea[] = [...listTarea, { name: tarea, done: false }];
@@ -49,8 +49,9 @@ function App() {
         <div className="row ">
           <div className="col-md-6 offset-md-3">
             <div className="card">
-              <div className="card-body">
-                <h5 className="card-title text-center">Tareas </h5>
+              <div>
+                <h2 className="borde">Tareas </h2>
+                <h2 className="wave ">Tareas </h2>
               </div>
               <div className="card-text p-3">
                 <form onSubmit={handleSubmit}>
